@@ -41,10 +41,12 @@
     "start": "npm run develop",
     "build": "npm run clean && gatsby build",
     "develop": "npm run clean && gatsby develop",
+    "serve": "npx netlify-cms-proxy-server",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "netlify-cms-proxy-server": "^1.1.5",
     "prettier": "^1.15.3"
   }
 }
