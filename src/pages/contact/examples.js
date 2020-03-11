@@ -1,6 +1,6 @@
-import React from 'react'
-import Link from 'gatsby-link'
-import Layout from '../../components/Layout'
+import React from 'react';
+import Link from 'gatsby-link';
+import Layout from '../../components/Layout';
 
 export default class Index extends React.Component {
   render() {
@@ -29,8 +29,11 @@ export default class Index extends React.Component {
                 This can be caused by the offline-plugin.{' '}
                 <a href="https://github.com/gatsbyjs/gatsby/issues/7997#issuecomment-419749232">
                   Workaround
-                </a>{' '}
-                is to use <code>?no-cache=1</code> in the POST url to prevent
+                </a>
+{" "}
+                is to use 
+{' '}
+<code>?no-cache=1</code> in the POST url to prevent
                 the service worker from handling form submissions
               </p>
               <h3>Adding reCAPTCHA</h3>
@@ -38,13 +41,14 @@ export default class Index extends React.Component {
                 If you are planning to add reCAPTCHA please go to{' '}
                 <a href="https://github.com/imorente/gatsby-netlify-form-example">
                   imorente/gatsby-netlify-form-example
-                </a>{' '}
+                </a>
+{" "}
                 for a working example.
               </p>
             </div>
           </div>
         </section>
       </Layout>
-    )
+    );
   }
 }
