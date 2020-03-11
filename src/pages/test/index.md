@@ -16,13 +16,13 @@ main:
     journey. We personally visit each farm to make sure the conditions are
     optimal for the plants, farmers and the local environment.
   image1:
-    image: /img/blog-index.jpg
+    image: /img/apple-touch-icon.png
     alt: ff
   image2:
-    image: /img/chemex.jpg
+    image: /img/blog-index.jpg
     alt: ffff
   image3:
-    image: /img/coffee-gear.png
+    image: /img/coffee.png
     alt: ffff
 ---
 

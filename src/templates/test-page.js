@@ -93,14 +93,10 @@ const TestPage = ({ data }) => {
   return (
     <Layout>
       <TestPageTemplate
-        image={frontmatter.image}
         title={frontmatter.title}
         heading={frontmatter.heading}
         description={frontmatter.description}
-        intro={frontmatter.intro}
         main={frontmatter.main}
-        testimonials={frontmatter.testimonials}
-        fullImage={frontmatter.full_image}
       />
     </Layout>
   );
