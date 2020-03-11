@@ -71,7 +71,7 @@ collections:
         label: "Test Page"
         name: "test"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "product-page"}
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "test-page"}
           - {label: Title, name: title, widget: string}
           - {label: Heading, name: heading, widget: string}
           - {label: Description, name: description, widget: string}
