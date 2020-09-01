@@ -23,13 +23,14 @@ module.exports = {
     'prettier'
   ],
   rules: {
-    "quotes": "double",
+    // "quotes": "double",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "prettier/prettier": [
       "error",
       {
         "trailingComma": "es5",
         "tabWidth": 2,
-        "singleQuote": false,
+        "singleQuote": true,
         // "printWidth": 140,
       }
     ],
