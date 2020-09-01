@@ -1,10 +1,11 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import Footer from "./Footer";
-import Navbar from "./Navbar";
+import { withPrefix } from 'gatsby';
+import { Global, css } from '@emotion/core';
+import Footer from './Footer';
+import Navbar from './Navbar';
 import './all.sass';
 import useSiteMetadata from './SiteMetadata';
-import { withPrefix } from 'gatsby';
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
@@ -48,6 +49,7 @@ const TemplateWrapper = ({ children }) => {
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
       </Helmet>
+      <Global styles={css``} />
       <Navbar />
       <div>{children}</div>
       <Footer />
