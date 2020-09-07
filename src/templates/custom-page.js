@@ -46,6 +46,7 @@ const CustomPage = ({ data }) => {
         anotherField={frontmatter.anotherField}
         test={frontmatter.test}
       />
+      <div>{data.site.siteMetadata.description}</div>
     </Layout>
   );
 };
@@ -71,6 +72,12 @@ export const customPageQuery = graphql`
           header
           text
         }
+      }
+    }
+    site {
+      siteMetadata {
+        title
+        description
       }
     }
   }
