@@ -8,8 +8,8 @@ export const onRouteUpdate = ({ location, prevLocation }) => {
   // console.log('old pathname', prevLocation ? prevLocation.pathname : null);
 };
 
-// Wraps every page in a component
-export const wrapPageElement = ({ element, props }) => (
+// Wraps root in the theme provider
+export const wrapRootElement = ({ element, props }) => (
   <ThemeProvider>
     {/* <Layout {...props}>{element}</Layout> */}
     {element}

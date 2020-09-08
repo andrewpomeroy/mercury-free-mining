@@ -1,0 +1,140 @@
+@font-face {
+  font-family: "Sharp Sans";
+  src: url("SharpSans-Bold.eot");
+  src: local("☺︎"), url("SharpSans-Bold.woff2") format("woff2"),
+    url("SharpSans-Bold.woff") format("woff"),
+    url("SharpSans-Bold.otf") format("opentype"),
+    url("SharpSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Sharp Sans";
+  src: url("SharpSans-BoldItalic.eot");
+  src: local("☺︎"), url("SharpSans-BoldItalic.woff2") format("woff2"),
+    url("SharpSans-BoldItalic.woff") format("woff"),
+    url("SharpSans-BoldItalic.otf") format("opentype"),
+    url("SharpSans-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Sharp Sans";
+  src: url("SharpSans-Extrabold.eot");
+  src: local("☺︎"), url("SharpSans-Extrabold.woff2") format("woff2"),
+    url("SharpSans-Extrabold.woff") format("woff"),
+    url("SharpSans-Extrabold.otf") format("opentype"),
+    url("SharpSans-Extrabold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Sharp Sans";
+  src: url("SharpSans-ExtraboldItalic.eot");
+  src: local("☺︎"), url("SharpSans-ExtraboldItalic.woff2") format("woff2"),
+    url("SharpSans-ExtraboldItalic.woff") format("woff"),
+    url("SharpSans-ExtraboldItalic.otf") format("opentype"),
+    url("SharpSans-ExtraboldItalic.ttf") format("truetype");
+  font-weight: 800;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Sharp Sans";
+  src: url("SharpSans-Book.eot");
+  src: local("☺︎"), url("SharpSans-Book.woff2") format("woff2"),
+    url("SharpSans-Book.woff") format("woff"),
+    url("SharpSans-Book.otf") format("opentype"),
+    url("SharpSans-Book.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Sharp Sans";
+  src: url("SharpSans-BookItalic.eot");
+  src: local("☺︎"), url("SharpSans-BookItalic.woff2") format("woff2"),
+    url("SharpSans-BookItalic.woff") format("woff"),
+    url("SharpSans-BookItalic.otf") format("opentype"),
+    url("SharpSans-BookItalic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Sharp Sans";
+  src: url("SharpSans-Light.eot");
+  src: local("☺︎"), url("SharpSans-Light.woff2") format("woff2"),
+    url("SharpSans-Light.woff") format("woff"),
+    url("SharpSans-Light.otf") format("opentype"),
+    url("SharpSans-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Sharp Sans";
+  src: url("SharpSans-LightItalic.eot");
+  src: local("☺︎"), url("SharpSans-LightItalic.woff2") format("woff2"),
+    url("SharpSans-LightItalic.woff") format("woff"),
+    url("SharpSans-LightItalic.otf") format("opentype"),
+    url("SharpSans-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Sharp Sans";
+  src: url("SharpSans-Medium.eot");
+  src: local("☺︎"), url("SharpSans-Medium.woff2") format("woff2"),
+    url("SharpSans-Medium.woff") format("woff"),
+    url("SharpSans-Medium.otf") format("opentype"),
+    url("SharpSans-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Sharp Sans";
+  src: url("SharpSans-MediumItalic.eot");
+  src: local("☺︎"), url("SharpSans-MediumItalic.woff2") format("woff2"),
+    url("SharpSans-MediumItalic.woff") format("woff"),
+    url("SharpSans-MediumItalic.otf") format("opentype"),
+    url("SharpSans-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Sharp Sans";
+  src: url("SharpSans-Semibold.eot");
+  src: local("☺︎"), url("SharpSans-Semibold.woff2") format("woff2"),
+    url("SharpSans-Semibold.woff") format("woff"),
+    url("SharpSans-Semibold.otf") format("opentype"),
+    url("SharpSans-Semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Sharp Sans";
+  src: url("SharpSans-SemiboldItalic.eot");
+  src: local("☺︎"), url("SharpSans-SemiboldItalic.woff2") format("woff2"),
+    url("SharpSans-SemiboldItalic.woff") format("woff"),
+    url("SharpSans-SemiboldItalic.otf") format("opentype"),
+    url("SharpSans-SemiboldItalic.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Sharp Sans";
+  src: url("SharpSans-Thin.eot");
+  src: local("☺︎"), url("SharpSans-Thin.woff2") format("woff2"),
+    url("SharpSans-Thin.woff") format("woff"),
+    url("SharpSans-Thin.otf") format("opentype"),
+    url("SharpSans-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Sharp Sans";
+  src: url("SharpSans-ThinItalic.eot");
+  src: local("☺︎"), url("SharpSans-ThinItalic.woff2") format("woff2"),
+    url("SharpSans-ThinItalic.woff") format("woff"),
+    url("SharpSans-ThinItalic.otf") format("opentype"),
+    url("SharpSans-ThinItalic.ttf") format("truetype");
+  font-weight: 100;
+  font-style: italic;
+}

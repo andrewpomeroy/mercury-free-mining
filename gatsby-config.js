@@ -29,6 +29,15 @@ module.exports = {
         name: "images",
       },
     },
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        custom: {
+          families: ["Sharp Sans"],
+          urls: ["/fonts/fontface.css"],
+        },
+      },
+    },
     "gatsby-plugin-emotion",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",

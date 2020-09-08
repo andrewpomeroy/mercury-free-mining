@@ -6,19 +6,13 @@ import Footer from './Footer';
 import Navbar from './Navbar';
 import './all.sass';
 import useSiteMetadata from './SiteMetadata';
-import fontFaceStyles from '../styles/fonts';
 import { withTheme } from 'emotion-theming';
-import Inline from './Inline';
 
 const makeGlobalStyles = theme => css`
-  ${fontFaceStyles}
   body {
     font-family: "Sharp Sans";
     color: ${theme.colors.text};
   }
-  /* a {
-    color: ${theme.colors.link};
-  } */
 `
 
 const GlobalStyles = withTheme(({ theme }) => (
