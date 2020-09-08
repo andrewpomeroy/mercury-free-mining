@@ -8,6 +8,7 @@ import './all.sass';
 import useSiteMetadata from './SiteMetadata';
 import fontFaceStyles from '../styles/fonts';
 import { withTheme } from 'emotion-theming';
+import Inline from './Inline';
 
 const makeGlobalStyles = theme => css`
   ${fontFaceStyles}

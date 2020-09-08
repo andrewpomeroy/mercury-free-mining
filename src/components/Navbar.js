@@ -51,10 +51,12 @@ const NavbarCenterColumn = styled(CenterColumn)`
 const NavbarInline = styled(Inline)`
   max-height: 100%;
 `;
-const NavbarInlineSplit = styled(InlineSplit)`
+const NavbarInlineSplit = styled(Inline)`
   flex: 1;
   max-height: 100%;
   max-width: 100%;
+  width: 100%;
+  justify-content: space-between;
 `;
 const NavbarInlineItem = styled(InlineItem)`
   display: flex;
@@ -80,21 +82,21 @@ const Navbar = props => {
   <NavbarOuter>
     <NavbarCenterColumnWrap>
       <NavbarCenterColumn>
-        <NavbarInlineSplit>
-          <NavbarInlineItem to="/" as={Link}>
+        <NavbarInlineSplit gutter={24}>
+          <NavbarInlineItem gutter={24} to="/" as={Link}>
             <LogoContainer>
               <Logo src="/img/header-logo.png" alt="Mercury Free Mining" />
             </LogoContainer>
           </NavbarInlineItem>
           <NavbarInlineItem style={{ display: 'flex' }}>
-            <NavbarInline>
-              <NavbarInlineItem>
+            <NavbarInline gutter={24}>
+              <NavbarInlineItem gutter={24}>
                 <NavbarInlineLink to="/products">Products</NavbarInlineLink>
               </NavbarInlineItem>
-              <NavbarInlineItem>
+              <NavbarInlineItem gutter={24}>
                 <NavbarInlineLink to="/blog">Blog</NavbarInlineLink>
               </NavbarInlineItem>
-              <NavbarInlineItem>
+              <NavbarInlineItem gutter={24}>
                 <NavbarInlineLink to="/contact">Contact</NavbarInlineLink>
               </NavbarInlineItem>
             </NavbarInline>

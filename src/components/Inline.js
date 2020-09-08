@@ -1,12 +1,19 @@
 import styled from "@emotion/styled";
+import { layout } from "styled-system";
+import { flexbox } from "../styleFunctions";
 
-export const INLINE_GUTTER = 16;
+export const GUTTER = 16;
 
 const Inline = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin-left: -${INLINE_GUTTER / 2}px;
-  margin-right: -${INLINE_GUTTER / 2}px;
+  ${flexbox}
+  ${layout}
+  margin-left: ${props => (-1 * (props.gutter / 2))}px;
+  margin-right: ${props => (-1 * (props.gutter / 2))}px;
 `;
+Inline.defaultProps = {
+  display: "flex",
+  flexDirection: "row",
+  gutter: GUTTER,
+}
 
 export default Inline;

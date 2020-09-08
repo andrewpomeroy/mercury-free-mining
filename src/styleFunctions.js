@@ -1,17 +1,30 @@
-const theme = {
-  colors: {
-    headerBG: 'white',
-    gold: '#ba9b60',
-    text: '#444',
-  },
-  layout: {
-    centerColumn: {
-      maxWidth: 1200,
-      outerGutter: 20,
-    },
-  }
-};
+import {
+  display,
+  alignContent,
+  alignItems,
+  justifyItems,
+  justifyContent,
+  flexWrap,
+  flexBasis,
+  flexDirection,
+  flex,
+  justifySelf,
+  alignSelf,
+  order
+} from "styled-system";
+import { compose } from '@styled-system/core';
 
-theme.colors.link = theme.colors.gold;
-
-export default theme;
+export const flexbox = compose(
+  display,
+  alignContent,
+  alignItems,
+  justifyItems,
+  justifyContent,
+  flexWrap,
+  flexBasis,
+  flexDirection,
+  flex,
+  justifySelf,
+  alignSelf,
+  order
+);
