@@ -1,6 +1,8 @@
 const theme = {
   colors: {
     headerBG: 'white',
+    gold: '#ba9b60',
+    text: '#444',
   },
   layout: {
     centerColumn: {
@@ -9,5 +11,7 @@ const theme = {
     },
   }
 };
+
+theme.colors.link = theme.colors.gold;
 
 export default theme;

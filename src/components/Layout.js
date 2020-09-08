@@ -1,12 +1,29 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet';
 import { withPrefix } from 'gatsby';
-import { Global, css } from '@emotion/core';
+import { Global, css, ThemeContext } from '@emotion/core';
 import Footer from './Footer';
 import Navbar from './Navbar';
 import './all.sass';
 import useSiteMetadata from './SiteMetadata';
+import fontFaceStyles from '../styles/fonts';
+import { withTheme } from 'emotion-theming';
 
+const makeGlobalStyles = theme => css`
+  ${fontFaceStyles}
+  body {
+    font-family: "Sharp Sans";
+    color: ${theme.colors.text};
+  }
+  /* a {
+    color: ${theme.colors.link};
+  } */
+`
+
+const GlobalStyles = withTheme(({ theme }) => (
+  <Global styles={makeGlobalStyles(theme)} />
+))
+  
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
   return (
@@ -49,7 +66,7 @@ const TemplateWrapper = ({ children }) => {
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
       </Helmet>
-      <Global styles={css``} />
+      <GlobalStyles />
       <Navbar />
       <div>{children}</div>
       <Footer />
