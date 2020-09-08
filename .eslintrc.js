@@ -24,6 +24,8 @@ module.exports = {
   ],
   rules: {
     // "quotes": "double",
+    "react/jsx-props-no-spreading": false,
+    "react/prop-types": "warning",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "prettier/prettier": [
       "error",

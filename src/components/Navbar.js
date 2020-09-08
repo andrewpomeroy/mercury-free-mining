@@ -1,20 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';
+import theme from '../theme';
 // import logo from '../img/logo.svg';
-
-const theme = {
-  colors: {
-    headerBG: 'white',
-  },
-};
-
-const layoutTokens = {
-  centerColumn: {
-    maxWidth: 1200,
-    outerGutter: 20,
-  },
-};
 
 const NAVBAR_HEIGHT = 50;
 
@@ -22,13 +10,13 @@ const CenterColumnWrap = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding-left: ${layoutTokens.centerColumn.outerGutter}px;
-  padding-right: ${layoutTokens.centerColumn.outerGutter}px;
+  padding-left: ${theme.layout.centerColumn.outerGutter}px;
+  padding-right: ${theme.layout.centerColumn.outerGutter}px;
 `;
 
 const CenterColumn = styled.div`
   flex: 1;
-  max-width: ${layoutTokens.centerColumn.maxWidth}px;
+  max-width: ${theme.layout.centerColumn.maxWidth}px;
 `;
 
 const NavbarOuter = styled.div`
@@ -50,10 +38,10 @@ const InlineSplit = styled(Inline)`
 `;
 
 const InlineItem = styled.div`
-  &:not(:first-child) {
+  &:not(:first-of-type) {
     padding-left: ${INLINE_GUTTER / 2}px;
   }
-  &:not(:last-child) {
+  &:not(:last-of-type) {
     padding-right: ${INLINE_GUTTER / 2}px;
   }
 `;
@@ -91,7 +79,7 @@ const Navbar = props => (
     <NavbarCenterColumnWrap>
       <NavbarCenterColumn>
         <NavbarInlineSplit>
-          <NavbarInlineItem as={Link}>
+          <NavbarInlineItem to="/" as={Link}>
             <Logo src="/img/header-logo.png" alt="Mercury Free Mining" />
           </NavbarInlineItem>
           <NavbarInlineItem style={{ display: 'flex' }}>
