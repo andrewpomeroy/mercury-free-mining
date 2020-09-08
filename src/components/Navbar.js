@@ -1,66 +1,56 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';
-import theme from '../theme';
+import Inline from './Inline';
+import InlineItem from './InlineItem';
+import InlineSplit from './InlineSplit';
+// import theme from '../theme';
 // import logo from '../img/logo.svg';
 
 const NAVBAR_HEIGHT = 50;
+const NAVBAR_LOGO_HEIGHT = 40;
 
 const CenterColumnWrap = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding-left: ${theme.layout.centerColumn.outerGutter}px;
-  padding-right: ${theme.layout.centerColumn.outerGutter}px;
+  padding-left: ${props => props.theme.layout.centerColumn.outerGutter}px;
+  padding-right: ${props => props.theme.layout.centerColumn.outerGutter}px;
 `;
 
 const CenterColumn = styled.div`
   flex: 1;
-  max-width: ${theme.layout.centerColumn.maxWidth}px;
+  max-width: ${props => props.theme.layout.centerColumn.maxWidth}px;
 `;
 
 const NavbarOuter = styled.div`
-  height: ${NAVBAR_HEIGHT}px;
-  background-color: ${theme.colors.headerBG};
-`;
-
-const INLINE_GUTTER = 16;
-
-const Inline = styled.div`
   display: flex;
-  flex-direction: row;
-  margin-left: -${INLINE_GUTTER / 2}px;
-  margin-right: -${INLINE_GUTTER / 2}px;
-`;
-
-const InlineSplit = styled(Inline)`
-  justify-content: space-between;
-`;
-
-const InlineItem = styled.div`
-  &:not(:first-of-type) {
-    padding-left: ${INLINE_GUTTER / 2}px;
-  }
-  &:not(:last-of-type) {
-    padding-right: ${INLINE_GUTTER / 2}px;
-  }
+  height: ${NAVBAR_HEIGHT}px;
+  background-color: ${props => props.theme.colors.headerBG};
 `;
 
 const Logo = styled.img`
-  max-height: 100%;
+  height: ${NAVBAR_LOGO_HEIGHT}px;
   width: auto;
 `;
+const LogoContainer = styled.div`
+  display: flex;
+  align-items: center;
+`
 
 const NavbarCenterColumnWrap = styled(CenterColumnWrap)`
+  flex: 1;
   max-height: 100%;
 `;
 const NavbarCenterColumn = styled(CenterColumn)`
+  display: flex;
   max-height: 100%;
 `;
 const NavbarInline = styled(Inline)`
   max-height: 100%;
 `;
 const NavbarInlineSplit = styled(InlineSplit)`
+  flex: 1;
   max-height: 100%;
   max-width: 100%;
 `;
@@ -80,7 +70,9 @@ const Navbar = props => (
       <NavbarCenterColumn>
         <NavbarInlineSplit>
           <NavbarInlineItem to="/" as={Link}>
-            <Logo src="/img/header-logo.png" alt="Mercury Free Mining" />
+            <LogoContainer>
+              <Logo src="/img/header-logo.png" alt="Mercury Free Mining" />
+            </LogoContainer>
           </NavbarInlineItem>
           <NavbarInlineItem style={{ display: 'flex' }}>
             <NavbarInline>
