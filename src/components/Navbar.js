@@ -1,86 +1,119 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import github from '../img/github-icon.svg'
-import logo from '../img/logo.svg'
+import React from 'react';
+import { Link } from 'gatsby';
+import styled from '@emotion/styled';
+// import logo from '../img/logo.svg';
 
-const Navbar = class extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      active: false,
-      navBarActiveClass: '',
-    }
+const theme = {
+  colors: {
+    headerBG: 'white',
+  },
+};
+
+const layoutTokens = {
+  centerColumn: {
+    maxWidth: 1200,
+    outerGutter: 20,
+  },
+};
+
+const NAVBAR_HEIGHT = 50;
+
+const CenterColumnWrap = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-left: ${layoutTokens.centerColumn.outerGutter}px;
+  padding-right: ${layoutTokens.centerColumn.outerGutter}px;
+`;
+
+const CenterColumn = styled.div`
+  flex: 1;
+  max-width: ${layoutTokens.centerColumn.maxWidth}px;
+`;
+
+const NavbarOuter = styled.div`
+  height: ${NAVBAR_HEIGHT}px;
+  background-color: ${theme.colors.headerBG};
+`;
+
+const INLINE_GUTTER = 16;
+
+const Inline = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-left: -${INLINE_GUTTER / 2}px;
+  margin-right: -${INLINE_GUTTER / 2}px;
+`;
+
+const InlineSplit = styled(Inline)`
+  justify-content: space-between;
+`;
+
+const InlineItem = styled.div`
+  &:not(:first-child) {
+    padding-left: ${INLINE_GUTTER / 2}px;
   }
-
-  toggleHamburger = () => {
-    // toggle the active boolean in the state
-    this.setState(
-      {
-        active: !this.state.active,
-      },
-      // after state has been updated,
-      () => {
-        // set the class in state for the navbar accordingly
-        this.state.active
-          ? this.setState({
-              navBarActiveClass: 'is-active',
-            })
-          : this.setState({
-              navBarActiveClass: '',
-            })
-      }
-    )
+  &:not(:last-child) {
+    padding-right: ${INLINE_GUTTER / 2}px;
   }
+`;
 
-  render() {
-    return (
-      <nav
-        className="navbar is-transparent"
-        role="navigation"
-        aria-label="main-navigation"
-      >
-        <div className="container">
-          <div className="navbar-brand">
-            <Link to="/" className="navbar-item" title="Logo">
-              <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
-            </Link>
-            {/* Hamburger menu */}
-            <div
-              className={`navbar-burger burger ${this.state.navBarActiveClass}`}
-              data-target="navMenu"
-              onClick={() => this.toggleHamburger()}
-            >
-              <span />
-              <span />
-              <span />
-            </div>
-          </div>
-          <div
-            id="navMenu"
-            className={`navbar-menu ${this.state.navBarActiveClass}`}
-          >
-            <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/about">
-                About
-              </Link>
-              <Link className="navbar-item" to="/products">
-                Products
-              </Link>
-              <Link className="navbar-item" to="/blog">
-                Blog
-              </Link>
-              <Link className="navbar-item" to="/contact">
-                Contact
-              </Link>
-              <Link className="navbar-item" to="/contact/examples">
-                Form Examples
-              </Link>
-            </div>
-          </div>
-        </div>
-      </nav>
-    )
-  }
-}
+const Logo = styled.img`
+  max-height: 100%;
+  width: auto;
+`;
 
-export default Navbar
+const NavbarCenterColumnWrap = styled(CenterColumnWrap)`
+  max-height: 100%;
+`;
+const NavbarCenterColumn = styled(CenterColumn)`
+  max-height: 100%;
+`;
+const NavbarInline = styled(Inline)`
+  max-height: 100%;
+`;
+const NavbarInlineSplit = styled(InlineSplit)`
+  max-height: 100%;
+  max-width: 100%;
+`;
+const NavbarInlineItem = styled(InlineItem)`
+  display: flex;
+  max-height: 100%;
+`;
+const NavbarInlineLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+`;
+
+const Navbar = props => (
+  <NavbarOuter>
+    <NavbarCenterColumnWrap>
+      <NavbarCenterColumn>
+        <NavbarInlineSplit>
+          <NavbarInlineItem as={Link}>
+            <Logo src="/img/header-logo.png" alt="Mercury Free Mining" />
+          </NavbarInlineItem>
+          <NavbarInlineItem style={{ display: 'flex' }}>
+            <NavbarInline>
+              <NavbarInlineItem>
+                <NavbarInlineLink to="/">Item 1</NavbarInlineLink>
+              </NavbarInlineItem>
+              <NavbarInlineItem>
+                <NavbarInlineLink to="/products">Products</NavbarInlineLink>
+              </NavbarInlineItem>
+              <NavbarInlineItem>
+                <NavbarInlineLink to="/blog">Blog</NavbarInlineLink>
+              </NavbarInlineItem>
+              <NavbarInlineItem>
+                <NavbarInlineLink to="/contact">Contact</NavbarInlineLink>
+              </NavbarInlineItem>
+            </NavbarInline>
+          </NavbarInlineItem>
+        </NavbarInlineSplit>
+      </NavbarCenterColumn>
+    </NavbarCenterColumnWrap>
+  </NavbarOuter>
+);
+
+export default Navbar;
