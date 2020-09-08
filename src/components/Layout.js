@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import { withPrefix } from 'gatsby';
-import { Global, css, ThemeContext } from '@emotion/core';
+import { Global, css } from '@emotion/core';
 import Footer from './Footer';
 import Navbar from './Navbar';
 import './all.sass';

@@ -1,5 +1,7 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import Color from 'color';
+// import { Link } from 'gatsby';
+import Link, { makeLinkColors } from './Link';
 import styled from '@emotion/styled';
 import Inline from './Inline';
 import InlineItem from './InlineItem';
@@ -7,7 +9,7 @@ import InlineSplit from './InlineSplit';
 // import theme from '../theme';
 // import logo from '../img/logo.svg';
 
-const NAVBAR_HEIGHT = 50;
+const NAVBAR_HEIGHT = 60;
 const NAVBAR_LOGO_HEIGHT = 40;
 
 const CenterColumnWrap = styled.div`
@@ -62,9 +64,19 @@ const NavbarInlineLink = styled(Link)`
   display: flex;
   align-items: center;
   white-space: nowrap;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  /* color: ${props => props.theme.colors.text}; */
+  /* color: ${props => makeLinkColors(props.theme.colors.text)}; */
 `;
+NavbarInlineLink.defaultProps = {
+  color: "text"
+}
 
-const Navbar = props => (
+const Navbar = props => {
+  return (
   <NavbarOuter>
     <NavbarCenterColumnWrap>
       <NavbarCenterColumn>
@@ -76,9 +88,6 @@ const Navbar = props => (
           </NavbarInlineItem>
           <NavbarInlineItem style={{ display: 'flex' }}>
             <NavbarInline>
-              <NavbarInlineItem>
-                <NavbarInlineLink to="/">Item 1</NavbarInlineLink>
-              </NavbarInlineItem>
               <NavbarInlineItem>
                 <NavbarInlineLink to="/products">Products</NavbarInlineLink>
               </NavbarInlineItem>
@@ -94,6 +103,6 @@ const Navbar = props => (
       </NavbarCenterColumn>
     </NavbarCenterColumnWrap>
   </NavbarOuter>
-);
+)};
 
 export default Navbar;
