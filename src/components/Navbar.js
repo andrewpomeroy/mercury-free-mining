@@ -82,16 +82,7 @@ const NavbarInlineLink = styled(Link)`
   &:active {
     color: ${props => Color(props.theme.colors.gold).darken(.25).string()};
   }
-  /* &:hover, &:focus {
-    color: ${props => Color(props.theme.colors.text).lighten(.65).string()};
-  }
-  &:active {
-    color: ${props => Color(props.theme.colors.text).darken(.65).string()};
-  } */
 `;
-// NavbarInlineLink.defaultProps = {
-//   color: "text"
-// }
 
 const Navbar = props => {
   return (
@@ -105,7 +96,6 @@ const Navbar = props => {
             </LogoContainer>
           </NavbarInlineItem>
           <NavbarInlineItem style={{ display: 'flex' }}>
-            {/* <NavbarInline gutter={24}> */}
             <NavbarInline>
               <NavbarInlineItem>
                 <NavbarInlineLink to="/products">Products</NavbarInlineLink>

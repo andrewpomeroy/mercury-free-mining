@@ -2,27 +2,13 @@ import React from 'react';
 import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
 import theme from '../theme';
 
-// const ThemeContext = React.createContext(theme);
+const ThemeProvider = ({ children }) => {
+  const RenderChildren = React.memo(({ children }) => <div>{children}</div>);
 
-// const ThemeProvider = () => {
-
-//   <ThemeContext.Provider
-//     value={{
-//       theme
-//     }}
-//   >
-//     {React.memo(children)}
-//   </ThemeContext.Provider>
-// }
-
-// export default ThemeContext;
-
-// export { ThemeProvider };
-
-const ThemeProvider = ({ children }) => (
+  return ( 
     <EmotionThemeProvider theme={theme}>
-      {children}
+      <RenderChildren>{children}</RenderChildren>
     </EmotionThemeProvider>
-  )
+  )}
 
 export default ThemeProvider;
