@@ -11,8 +11,8 @@ import CenterColumn from './CenterColumn';
 // import theme from '../theme';
 // import logo from '../img/logo.svg';
 
-const NAVBAR_HEIGHT = 60;
-const NAVBAR_LOGO_HEIGHT = 40;
+const NAVBAR_HEIGHT = 68;
+const NAVBAR_LOGO_HEIGHT = 48;
 
 const NavbarOuter = styled.div`
   display: flex;
