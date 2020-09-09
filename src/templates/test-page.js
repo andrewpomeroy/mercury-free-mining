@@ -91,14 +91,12 @@ const TestPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
 
   return (
-    <Layout>
       <TestPageTemplate
         title={frontmatter.title}
         heading={frontmatter.heading}
         description={frontmatter.description}
         main={frontmatter.main}
       />
-    </Layout>
   );
 };
 

@@ -40,14 +40,14 @@ const CustomPage = ({ data }) => {
   console.log(data);
 
   return (
-    <Layout>
+    <>
       <CustomPageTemplate
         title={frontmatter.title}
         anotherField={frontmatter.anotherField}
         test={frontmatter.test}
       />
       <div>{data.site.siteMetadata.description}</div>
-    </Layout>
+    </>
   );
 };
 

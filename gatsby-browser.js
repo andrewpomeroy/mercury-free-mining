@@ -11,7 +11,10 @@ export const onRouteUpdate = ({ location, prevLocation }) => {
 // Wraps root in the theme provider
 export const wrapRootElement = ({ element, props }) => (
   <ThemeProvider>
-    {/* <Layout {...props}>{element}</Layout> */}
     {element}
   </ThemeProvider>
+);
+
+export const wrapPageElement = ({ element, props }) => (
+    <Layout {...props}>{element}</Layout>
 );

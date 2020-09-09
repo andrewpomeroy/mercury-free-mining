@@ -58,7 +58,6 @@ const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data;
 
   return (
-    <Layout>
       <BlogPostTemplate
         content={post.html}
         contentComponent={HTMLContent}
@@ -75,7 +74,6 @@ const BlogPost = ({ data }) => {
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
       />
-    </Layout>
   );
 };
 
