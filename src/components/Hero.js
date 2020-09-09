@@ -4,6 +4,8 @@ import CenterColumnWrap from './CenterColumnWrap';
 import CenterColumn from './CenterColumn';
 import { layout } from "styled-system";
 import { flexbox } from "../styleFunctions";
+import Button from './Button';
+import LinkButton from './LinkButton';
 
 
 const HERO_HEIGHT = 500;
@@ -62,6 +64,9 @@ const Hero = props => {
               </HeroLine>
               <HeroLine>
                 <HeroHeading as="h2">Together, we can bring it down to zero.</HeroHeading>
+              </HeroLine>
+              <HeroLine>
+                <LinkButton size="large" to="/contact">About</LinkButton>
               </HeroLine>
             </HeroColumn>
           </HeroColumns>
