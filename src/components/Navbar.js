@@ -6,24 +6,13 @@ import styled from '@emotion/styled';
 import Inline from './Inline';
 import InlineItem from './InlineItem';
 import InlineSplit from './InlineSplit';
+import CenterColumnWrap from './CenterColumnWrap';
+import CenterColumn from './CenterColumn';
 // import theme from '../theme';
 // import logo from '../img/logo.svg';
 
 const NAVBAR_HEIGHT = 60;
 const NAVBAR_LOGO_HEIGHT = 40;
-
-const CenterColumnWrap = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding-left: ${props => props.theme.layout.centerColumn.outerGutter}px;
-  padding-right: ${props => props.theme.layout.centerColumn.outerGutter}px;
-`;
-
-const CenterColumn = styled.div`
-  flex: 1;
-  max-width: ${props => props.theme.layout.centerColumn.maxWidth}px;
-`;
 
 const NavbarOuter = styled.div`
   display: flex;

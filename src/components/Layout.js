@@ -10,7 +10,7 @@ import { withTheme } from 'emotion-theming';
 
 const makeGlobalStyles = theme => css`
   body {
-    font-family: "Sharp Sans";
+    font-family: ${theme.fontFamilies.body};
     color: ${theme.colors.text};
   }
 `
