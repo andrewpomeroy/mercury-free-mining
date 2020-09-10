@@ -15,17 +15,19 @@ import GlobalStyleWrapper from '../components/GlobalStyleWrapper';
 CMS.registerMediaLibrary(uploadcare);
 CMS.registerMediaLibrary(cloudinary);
 
-CMS.registerPreviewTemplate('index', IndexPagePreview);
-CMS.registerPreviewTemplate('about', AboutPagePreview);
-CMS.registerPreviewTemplate('products', ProductPagePreview);
-CMS.registerPreviewTemplate('test', TestPagePreview);
-CMS.registerPreviewTemplate('custom', CustomPagePreview);
-CMS.registerPreviewTemplate('blog', props => (
+const PreviewShim = element => props => (
   <CSSInjector>
     <ThemeProvider>
       <GlobalStyleWrapper>
-        <BlogPostPreview {...props}></BlogPostPreview>
+        {element(props)}
       </GlobalStyleWrapper>
     </ThemeProvider>
   </CSSInjector>
-))
+)
+
+CMS.registerPreviewTemplate('index', PreviewShim(IndexPagePreview));
+CMS.registerPreviewTemplate('about', PreviewShim(AboutPagePreview));
+CMS.registerPreviewTemplate('products', PreviewShim(ProductPagePreview));
+CMS.registerPreviewTemplate('test', PreviewShim(TestPagePreview));
+CMS.registerPreviewTemplate('custom', PreviewShim(CustomPagePreview));
+CMS.registerPreviewTemplate('blog', PreviewShim(BlogPostPreview));
