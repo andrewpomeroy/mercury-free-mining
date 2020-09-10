@@ -5,12 +5,12 @@ import Footer from './Footer';
 import Navbar from './Navbar';
 import './all.sass';
 import useSiteMetadata from './SiteMetadata';
-import GlobalStyles from './GlobalStyles';
+import GlobalStyleWrapper from './GlobalStyleWrapper';
   
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
   return (
-    <div>
+    <GlobalStyleWrapper>
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
@@ -49,11 +49,10 @@ const TemplateWrapper = ({ children }) => {
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
       </Helmet>
-      <GlobalStyles />
       <Navbar />
       <div>{children}</div>
       <Footer />
-    </div>
+    </GlobalStyleWrapper>
   );
 };
 

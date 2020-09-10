@@ -10,7 +10,7 @@ import TestPagePreview from './preview-templates/TestPagePreview';
 import IndexPagePreview from './preview-templates/IndexPagePreview';
 import CSSInjector from './CSSInjector';
 import ThemeProvider from '../components/ThemeProvider';
-import GlobalStyles from '../components/GlobalStyles';
+import GlobalStyleWrapper from '../components/GlobalStyleWrapper';
 
 CMS.registerMediaLibrary(uploadcare);
 CMS.registerMediaLibrary(cloudinary);
@@ -23,8 +23,9 @@ CMS.registerPreviewTemplate('custom', CustomPagePreview);
 CMS.registerPreviewTemplate('blog', props => (
   <CSSInjector>
     <ThemeProvider>
-      <GlobalStyles />
-      <BlogPostPreview {...props}></BlogPostPreview>
+      <GlobalStyleWrapper>
+        <BlogPostPreview {...props}></BlogPostPreview>
+      </GlobalStyleWrapper>
     </ThemeProvider>
   </CSSInjector>
 ))
