@@ -83,3 +83,13 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     });
   }
 };
+
+// exports.onCreateWebpackConfig = ({ stage, actions }) => {
+//   actions.setWebpackConfig({
+//     resolve: {
+//       alias: {
+//         '@emotion/core': path.resolve(__dirname, "node_modules/@emotion/core"),
+//       }
+//     },
+//   })
+// }

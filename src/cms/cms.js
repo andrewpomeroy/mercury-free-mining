@@ -1,6 +1,7 @@
 import CMS from 'netlify-cms-app';
 import uploadcare from 'netlify-cms-media-library-uploadcare';
 import cloudinary from 'netlify-cms-media-library-cloudinary';
+import ReactDOM from 'react-dom';
 
 import AboutPagePreview from './preview-templates/AboutPagePreview';
 import BlogPostPreview from './preview-templates/BlogPostPreview';
@@ -8,12 +9,13 @@ import ProductPagePreview from './preview-templates/ProductPagePreview';
 import CustomPagePreview from './preview-templates/CustomPagePreview';
 import TestPagePreview from './preview-templates/TestPagePreview';
 import IndexPagePreview from './preview-templates/IndexPagePreview';
-import CSSInjector from './CSSInjector';
+import StaticCSSInjector from './StaticCSSInjector';
 import ThemeProvider from '../components/ThemeProvider';
 import GlobalStyleWrapper from '../components/GlobalStyleWrapper';
 import { TestWidgetControl, TestWidgetPreview } from '../widgets/testWidget';
 import { Derp } from '../components/Content';
 import { useEffect } from 'react';
+import withEmotion from './withEmotion';
 
 CMS.registerMediaLibrary(uploadcare);
 CMS.registerMediaLibrary(cloudinary);
@@ -25,6 +27,10 @@ const OK = props => {
   }, [])
   return <>{props.children}</>
 }
+
+console.log(ReactDOM);
+console.log(ReactDOM.hydrate);
+window.ReactDOM = ReactDOM;
 
 CMS.registerWidget('testWidget', TestWidgetControl, TestWidgetPreview);
 CMS.registerEditorComponent({
@@ -51,23 +57,22 @@ CMS.registerEditorComponent({
   // (component gives better render performance)
   toPreview: function (obj) {
     return (
-      <OK>
+      <StaticCSSInjector>
         <Derp>{obj.id} it's a preview</Derp>
-      </OK>
-      // '<img src="http://img.youtube.com/vi/' + obj.id + '/maxresdefault.jpg" alt="Youtube Video"/>'
+      </StaticCSSInjector>
     );
   }
 });
 
-const PreviewShim = element => props => (
-  <CSSInjector>
+// const Inner = props
+
+const PreviewShim = element => withEmotion((props) => (
     <ThemeProvider>
       <GlobalStyleWrapper>
         {element(props)}
       </GlobalStyleWrapper>
     </ThemeProvider>
-  </CSSInjector>
-)
+))
 
 CMS.registerPreviewTemplate('index', PreviewShim(IndexPagePreview));
 CMS.registerPreviewTemplate('about', PreviewShim(AboutPagePreview));
