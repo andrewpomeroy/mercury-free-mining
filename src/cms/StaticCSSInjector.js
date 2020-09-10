@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import createCache from '@emotion/cache'
 import { CacheProvider } from '@emotion/core'
 
-const StaticCSSInjector = ({ children }) => {
+const StaticCSSInjector = React.memo(({ children }) => {
 
   var iframe = document.querySelector("#nc-root iframe")
   const iframeHead = iframe.contentDocument.head
@@ -13,6 +13,6 @@ const StaticCSSInjector = ({ children }) => {
       {children}
     </CacheProvider>    
   )
-}
+})
 
 export default StaticCSSInjector;
