@@ -11,7 +11,7 @@ const BlogPostPreview = ({ entry, widgetFor }) => {
       description={entry.getIn(['data', 'description'])}
       tags={tags && tags.toJS()}
       title={entry.getIn(['data', 'title'])}
-      testWidget={_.isArray(testWidget) ? testWidget : testWidget.toJS()}
+      testWidget={testWidget ? _.isArray(testWidget) ? testWidget : testWidget.toJS() : []}
     />
   );
 };
