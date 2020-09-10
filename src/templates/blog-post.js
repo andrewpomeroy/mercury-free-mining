@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { kebabCase } from 'lodash';
 import Helmet from 'react-helmet';
 import { graphql, Link } from 'gatsby';
-import Content, { HTMLContent } from '../components/Content';
+import Content, { HTMLContent, HTMLAstContent } from '../components/Content';
 import styled from '@emotion/styled';
 
 const Test = styled.h1`
@@ -14,8 +14,6 @@ const Test = styled.h1`
 `;
 
 const TestWidget = ({ items }) => {
-  console.log(typeof(items));
-  console.log(items[0]);
   return (
   <ul>
     {items && items.length ? items.map(x => (
@@ -81,8 +79,8 @@ const BlogPost = ({ data }) => {
 
   return (
       <BlogPostTemplate
-        content={post.html}
-        contentComponent={HTMLContent}
+        content={post.htmlAst}
+        contentComponent={HTMLAstContent}
         description={post.frontmatter.description}
         helmet={
           <Helmet titleTemplate="%s | Blog">
@@ -113,6 +111,7 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       id
       html
+      htmlAst
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
