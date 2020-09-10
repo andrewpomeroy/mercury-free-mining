@@ -35,7 +35,13 @@ collections:
       - { label: "Featured Image", name: "featuredimage", widget: image }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "list" }
-      - { label: "Derp", name: "derp", widget: "text" }
+      - {
+          label: "Test Widget",
+          name: "testWidget",
+          widget: "testWidget",
+          separator: ",",
+          required: false,
+        }
 
   - name: "pages"
     label: "Pages"

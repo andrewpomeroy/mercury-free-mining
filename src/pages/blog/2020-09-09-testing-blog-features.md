@@ -11,6 +11,9 @@ featuredimage: /img/chemex.jpg
 tags:
   - test tag
   - another test tag
+testWidget:
+  - zgdsg
+  - tjklasjg
 ---
 Something of an intro. Maecenas sed diam eget risus varius blandit sit amet non magna. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
 

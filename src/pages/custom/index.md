@@ -8,7 +8,12 @@ test:
     text: Hello Worldfasd
   - type: option1
     header: another header jesus what
-    text: Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus
+    text:
+      Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus
       commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet
       risus.
+flexTest:
+  - type: option1
+    header: Block title
+    text: Hello World
 ---

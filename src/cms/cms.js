@@ -11,9 +11,12 @@ import IndexPagePreview from './preview-templates/IndexPagePreview';
 import CSSInjector from './CSSInjector';
 import ThemeProvider from '../components/ThemeProvider';
 import GlobalStyleWrapper from '../components/GlobalStyleWrapper';
+import { TestWidgetControl, TestWidgetPreview } from '../widgets/testWidget';
 
 CMS.registerMediaLibrary(uploadcare);
 CMS.registerMediaLibrary(cloudinary);
+
+CMS.registerWidget('testWidget', TestWidgetControl, TestWidgetPreview);
 
 const PreviewShim = element => props => (
   <CSSInjector>

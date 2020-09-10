@@ -13,6 +13,17 @@ const Test = styled.h1`
   }
 `;
 
+const TestWidget = ({ items }) => {
+  console.log(typeof(items));
+  console.log(items[0]);
+  return (
+  <ul>
+    {items && items.length ? items.map(x => (
+      <li key={x}>{x}</li>
+    )) : ''}
+  </ul>
+)}
+
 export const BlogPostTemplate = ({
   content,
   contentComponent,
@@ -20,8 +31,10 @@ export const BlogPostTemplate = ({
   tags,
   title,
   helmet,
+  testWidget,
 }) => {
   const PostContent = contentComponent || Content;
+  console.log(testWidget);
 
   return (
     <section className="section">
@@ -30,6 +43,7 @@ export const BlogPostTemplate = ({
         <div className="columns">
           <div className="column is-10 is-offset-1">
             <Test>hiiiiii</Test>
+            <TestWidget items={testWidget} />
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
@@ -81,6 +95,7 @@ const BlogPost = ({ data }) => {
         }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
+        testWidget={post.frontmatter.testWidget}
       />
   );
 };
@@ -103,6 +118,7 @@ export const pageQuery = graphql`
         title
         description
         tags
+        testWidget
       }
     }
   }
