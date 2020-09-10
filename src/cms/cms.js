@@ -8,6 +8,9 @@ import ProductPagePreview from './preview-templates/ProductPagePreview';
 import CustomPagePreview from './preview-templates/CustomPagePreview';
 import TestPagePreview from './preview-templates/TestPagePreview';
 import IndexPagePreview from './preview-templates/IndexPagePreview';
+import CSSInjector from './CSSInjector';
+import ThemeProvider from '../components/ThemeProvider';
+import GlobalStyles from '../components/GlobalStyles';
 
 CMS.registerMediaLibrary(uploadcare);
 CMS.registerMediaLibrary(cloudinary);
@@ -17,4 +20,11 @@ CMS.registerPreviewTemplate('about', AboutPagePreview);
 CMS.registerPreviewTemplate('products', ProductPagePreview);
 CMS.registerPreviewTemplate('test', TestPagePreview);
 CMS.registerPreviewTemplate('custom', CustomPagePreview);
-CMS.registerPreviewTemplate('blog', BlogPostPreview);
+CMS.registerPreviewTemplate('blog', props => (
+  <CSSInjector>
+    <ThemeProvider>
+      <GlobalStyles />
+      <BlogPostPreview {...props}></BlogPostPreview>
+    </ThemeProvider>
+  </CSSInjector>
+))

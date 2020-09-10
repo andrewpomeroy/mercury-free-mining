@@ -1,23 +1,11 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { withPrefix } from 'gatsby';
-import { Global, css } from '@emotion/core';
 import Footer from './Footer';
 import Navbar from './Navbar';
 import './all.sass';
 import useSiteMetadata from './SiteMetadata';
-import { withTheme } from 'emotion-theming';
-
-const makeGlobalStyles = theme => css`
-  body {
-    font-family: ${theme.fontFamilies.body};
-    color: ${theme.colors.text};
-  }
-`
-
-const GlobalStyles = withTheme(({ theme }) => (
-  <Global styles={makeGlobalStyles(theme)} />
-))
+import GlobalStyles from './GlobalStyles';
   
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
