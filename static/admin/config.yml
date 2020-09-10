@@ -35,6 +35,7 @@ collections:
       - { label: "Featured Image", name: "featuredimage", widget: image }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Derp", name: "derp", widget: "text" }
 
   - name: "pages"
     label: "Pages"
@@ -313,8 +314,8 @@ collections:
           - { label: Title, name: title, widget: string }
           - { label: Another field, name: anotherField, widget: string }
           - {
-              label: Test,
-              name: test,
+              label: "Flex Test",
+              name: flexTest,
               widget: list,
               types:
                 [

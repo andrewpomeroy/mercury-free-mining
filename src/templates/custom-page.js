@@ -43,7 +43,7 @@ const CustomPage = ({ data }) => {
       <CustomPageTemplate
         title={frontmatter.title}
         anotherField={frontmatter.anotherField}
-        test={frontmatter.test}
+        test={frontmatter.flexTest}
       />
       <div>{data.site.siteMetadata.description}</div>
     </>
@@ -66,7 +66,7 @@ export const customPageQuery = graphql`
       frontmatter {
         title
         anotherField
-        test {
+        flexTest {
           type
           header
           text
