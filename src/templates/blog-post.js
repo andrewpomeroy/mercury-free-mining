@@ -32,7 +32,6 @@ export const BlogPostTemplate = ({
   testWidget,
 }) => {
   const PostContent = contentComponent || Content;
-  console.log(testWidget);
 
   return (
     <section className="section">

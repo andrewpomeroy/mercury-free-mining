@@ -5,7 +5,7 @@ date: 2020-09-09T22:37:41.869Z
 description: This is a description. Nulla vitae elit libero, a pharetra augue.
   Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at
   eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia
-  bibendum nulla sed consectetur.
+  bibenasdgasgdum nulla sed consectetur.
 featuredpost: true
 featuredimage: /img/chemex.jpg
 tags:
@@ -17,6 +17,13 @@ testWidget:
   - sf
 ---
 <derp>0w5CPJ4FQ-0</derp>
+
+<floatimage
+        src="/img/chemex.jpg"
+        alt="some alt text"
+        title="nope!"
+        align="right"
+     ></floatimage>
 
 Something of an intro. Maecenas sed diam eget risus varius blandit sit amet non magna. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
 

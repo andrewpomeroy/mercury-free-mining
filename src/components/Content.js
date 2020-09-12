@@ -1,29 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import rehypeReact from "rehype-react";
+import rehypeReact from 'rehype-react';
 import styled from '@emotion/styled';
+import PreviewCompatibleImage from './PreviewCompatibleImage';
+import FloatImage from './FloatImage';
 
 export const Derp = styled.h1`
   color: red !important;
-`
-// export const Derp = () => (
-//   <>youtube 0w5CPJ4FQ-0</>
-// )
-  
+`;
+
 const renderAst = new rehypeReact({
   createElement: React.createElement,
-  components: { "derp": Derp },
-}).Compiler
+  components: {
+    derp: Derp,
+    floatimage: FloatImage,
+  },
+}).Compiler;
 
 export const HTMLContent = ({ content, className }) => (
   <div className={className} dangerouslySetInnerHTML={{ __html: content }} />
 );
-  
+
 export const HTMLAstContent = ({ content, className }) => (
-  <div className={className}>
-      {renderAst(content)}
-  </div>
+  <div className={className}>{renderAst(content)}</div>
 );
 
 const Content = ({ content, className }) => (
