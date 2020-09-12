@@ -21,18 +21,11 @@ import FloatImage from '../components/FloatImage';
 CMS.registerMediaLibrary(uploadcare);
 CMS.registerMediaLibrary(cloudinary);
 
-// console.log(NetlifyCmsEditorComponentImage);
-
-// CMS.registerEditorComponent({
-//   ...NetlifyCmsEditorComponentImage,
-// });
 CMS.registerEditorComponent({
-  // ...NetlifyCmsEditorComponentImage,
   id: 'image',
   label: 'Image',
   // Pattern to identify a block as being an instance of this component
-  pattern: /^<floatimage\s*(?:src="([^"]*)")?\s*(?:alt="([^"]*)")?\s*(?:title="([^"]*)")?\s*(?:align="([^"]*)")?[^>*]*><\/floatimage>/,
-  // pattern: /^<floatimage\s*(?:src="([^"]*)")?\s*(?:alt="([^"]*)")?\s*(?:title="([^"]*)")?\s*(?:align="([^"]*)")?[^>*]*><\/floatimage>/,
+  pattern: /^<float-image\s*(?:src="([^"]*)")?\s*(?:alt="([^"]*)")?\s*(?:title="([^"]*)")?\s*(?:align="([^"]*)")?[^>*]*><\/float-image>/,
   // Function to extract data elements from the regexp match
   fromBlock(match) {
     return {
@@ -43,28 +36,18 @@ CMS.registerEditorComponent({
     };
   },
   toBlock: ({ alt, image, title, align }) => {
-    return `<floatimage
+    return `<float-image
         src="${image || ''}"
         alt="${alt || ''}"
         title="${title || ''}"
         ${align ? `align="${align}"` : ''}
-     ></floatimage>`;
-    // return `<floatimage
-    //     src="${image || ''}"
-    //     alt="${alt || ''}"
-    //     title="${title || ''}"
-    //     ${align ? `align="${align}"` : ''}
-    //  ></floatimage>`;
+     ></float-image>`;
   },
   toPreview: (obj, getAsset, fields) => {
     const imageField = fields?.find(f => f.get('widget') === 'image');
     const src = getAsset(obj.image, imageField);
     return (
       <div>
-        {/* <img src={src || ''} alt={obj.alt || ''} title={obj.title || ''} /> */}
-        {/* <pre>{JSON.stringify(fields, '\t')}</pre>
-        <pre>{JSON.stringify(src, '\t')}</pre>
-        <pre>{JSON.stringify(obj, '\t')}</pre> */}
         <StaticCSSInjector>
           <FloatImage
             src={src || ''}

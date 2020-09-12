@@ -14,7 +14,7 @@ const renderAst = new rehypeReact({
   createElement: React.createElement,
   components: {
     derp: Derp,
-    floatimage: FloatImage,
+    'float-image': FloatImage,
   },
 }).Compiler;
 

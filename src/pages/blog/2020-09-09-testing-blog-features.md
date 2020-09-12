@@ -18,6 +18,13 @@ testWidget:
 ---
 <derp>0w5CPJ4FQ-0</derp>
 
+<float-image
+        src="/img/chemex.jpg"
+        alt="alt"
+        title="title"
+        align="left"
+     ></float-image>
+
 <floatimage
         src="/img/chemex.jpg"
         alt="some alt text"
