@@ -36,12 +36,8 @@ CMS.registerEditorComponent({
     };
   },
   toBlock: ({ alt, image, title, align }) => {
-    return `<float-image
-        src="${image || ''}"
-        alt="${alt || ''}"
-        title="${title || ''}"
-        ${align ? `align="${align}"` : ''}
-     ></float-image>`;
+    // eslint-disable-next-line
+    return `<float-image src="${image || ''}" alt="${alt || ''}" title="${title || ''}" ${align ? `align="${align}"` : ''} ></float-image>`;
   },
   toPreview: (obj, getAsset, fields) => {
     const imageField = fields?.find(f => f.get('widget') === 'image');

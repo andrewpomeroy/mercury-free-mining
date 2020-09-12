@@ -6,10 +6,6 @@ import styled from '@emotion/styled';
 import PreviewCompatibleImage from './PreviewCompatibleImage';
 import FloatImage from './FloatImage';
 
-export const Derp = styled.h1`
-  color: red !important;
-`;
-
 const renderAst = new rehypeReact({
   createElement: React.createElement,
   components: {

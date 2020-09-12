@@ -7,7 +7,7 @@ description: This is a description. Nulla vitae elit libero, a pharetra augue.
   eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia
   bibenasdgasgdum nulla sed consectetur.
 featuredpost: true
-featuredimage: /img/chemex.jpg
+featuredimage: /img/blog-index.jpg
 tags:
   - test tag
   - another test tag
@@ -18,10 +18,11 @@ testWidget:
 ---
 
 <float-image
-src="/img/chemex.jpg"
-alt="alt"
-title="title"
-align="left"></float-image>
+        src="/img/chemex.jpg"
+        alt="alt"
+        title="title"
+        align="left"
+     ></float-image>
 
 Something of an intro. Maecenas sed diam eget risus varius blandit sit amet non magna. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
 
