@@ -16,21 +16,12 @@ testWidget:
   - tjklasjg
   - sf
 ---
-<derp>0w5CPJ4FQ-0</derp>
 
 <float-image
-        src="/img/chemex.jpg"
-        alt="alt"
-        title="title"
-        align="left"
-     ></float-image>
-
-<floatimage
-        src="/img/chemex.jpg"
-        alt="some alt text"
-        title="nope!"
-        align="right"
-     ></floatimage>
+src="/img/chemex.jpg"
+alt="alt"
+title="title"
+align="left"></float-image>
 
 Something of an intro. Maecenas sed diam eget risus varius blandit sit amet non magna. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
 
