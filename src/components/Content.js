@@ -2,14 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import rehypeReact from 'rehype-react';
-import styled from '@emotion/styled';
-import PreviewCompatibleImage from './PreviewCompatibleImage';
 import FloatImage from './FloatImage';
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
   components: {
-    derp: Derp,
     'float-image': FloatImage,
   },
 }).Compiler;

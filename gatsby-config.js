@@ -12,7 +12,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/static/img`,
-        name: 'uploads',
+        name: 'images',
       },
     },
     {
@@ -22,11 +22,18 @@ module.exports = {
         name: 'pages',
       },
     },
+    // {
+    //   resolve: 'gatsby-source-filesystem',
+    //   options: {
+    //     path: `${__dirname}/src/img`,
+    //     name: 'images',
+    //   },
+    // },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/img`,
-        name: 'images',
+        name: 'srcimages',
       },
     },
     {
@@ -46,9 +53,16 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: `gatsby-remark-relative-source`,
+            options: {
+              name: `images`,
+              htmlSources: [{ tagName: `float-image`, attributes: [`image`] }], // post-video is a component referenced later by gatsby-remark-custom-image-component
+            },
+          },
+          {
             resolve: 'gatsby-remark-relative-images',
             options: {
-              name: 'uploads',
+              name: 'images',
             },
           },
           {
@@ -58,6 +72,30 @@ module.exports = {
               // the content container as this plugin uses this as the
               // base for generating different widths of each image.
               maxWidth: 2048,
+            },
+          },
+          {
+            resolve: `gatsby-remark-component-images`,
+            options: {
+              // plugin options
+              components: [
+                // source attributes can be defined in the array as strings or objects
+                // string represenation maps to the source attribute and the target attribute defaults to the source attribute prefixed by the sharpMethod
+                // so below becomes [{source: `image`, target: `fluidimage`}]
+                // { tagName: `post-video`, attributes: [`image`] },
+                {
+                  tagName: 'float-image',
+                  attributes: [`image`],
+                },
+                // object representation can be used to apply/override options or define the target attribute
+                // object and string representation can be mixed to suit requirement
+                // { tagName: `gallery-media`, attributes: [{ source: `src`, target: `fluidimg`, options: { tracedSVG: { color: "rgb(248, 255, 93)" },`widescreen`] }
+              ],
+              sharpMethod: 'fluid',
+              // fluid's arguments
+              quality: 50,
+              maxWidth: 1200,
+              // withWebp: true
             },
           },
           {

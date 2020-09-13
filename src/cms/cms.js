@@ -14,7 +14,6 @@ import StaticCSSInjector from './StaticCSSInjector';
 import ThemeProvider from '../components/ThemeProvider';
 import GlobalStyleWrapper from '../components/GlobalStyleWrapper';
 import { TestWidgetControl, TestWidgetPreview } from '../widgets/testWidget';
-import { Derp } from '../components/Content';
 import withEmotion from './withEmotion';
 import FloatImage from '../components/FloatImage';
 
@@ -22,10 +21,15 @@ CMS.registerMediaLibrary(uploadcare);
 CMS.registerMediaLibrary(cloudinary);
 
 CMS.registerEditorComponent({
+  ...NetlifyCmsEditorComponentImage,
+  id: 'image2',
+});
+
+CMS.registerEditorComponent({
   id: 'image',
   label: 'Image',
   // Pattern to identify a block as being an instance of this component
-  pattern: /^<float-image\s*(?:src="([^"]*)")?\s*(?:alt="([^"]*)")?\s*(?:title="([^"]*)")?\s*(?:align="([^"]*)")?[^>*]*><\/float-image>/,
+  pattern: /^<float-image\s*(?:image="([^"]*)")?\s*(?:alt="([^"]*)")?\s*(?:title="([^"]*)")?\s*(?:align="([^"]*)")?[^>*]*><\/float-image>/,
   // Function to extract data elements from the regexp match
   fromBlock(match) {
     return {
@@ -37,7 +41,7 @@ CMS.registerEditorComponent({
   },
   toBlock: ({ alt, image, title, align }) => {
     // eslint-disable-next-line
-    return `<float-image src="${image || ''}" alt="${alt || ''}" title="${title || ''}" ${align ? `align="${align}"` : ''} ></float-image>`;
+    return `<float-image image="${image || ''}" alt="${alt || ''}" title="${title || ''}" ${align ? `align="${align}"` : ''} ></float-image>`;
   },
   toPreview: (obj, getAsset, fields) => {
     const imageField = fields?.find(f => f.get('widget') === 'image');
@@ -45,8 +49,11 @@ CMS.registerEditorComponent({
     return (
       <div>
         <StaticCSSInjector>
+          <pre>{JSON.stringify(obj.image)}</pre>
+          <pre>{JSON.stringify(src)}</pre>
+          {/* src={src || ''} */}
           <FloatImage
-            src={src || ''}
+            image={obj.image || ''}
             alt={obj.alt || ''}
             title={obj.title || ''}
             align={obj.align || null}
@@ -101,36 +108,6 @@ CMS.registerEditorComponent({
 });
 
 CMS.registerWidget('testWidget', TestWidgetControl, TestWidgetPreview);
-CMS.registerEditorComponent({
-  // Internal id of the component
-  id: 'youtube',
-  // Visible label
-  label: 'Youtube',
-  // Fields the user need to fill out when adding an instance of the component
-  fields: [{ name: 'id', label: 'Youtube Video ID', widget: 'string' }],
-  // Pattern to identify a block as being an instance of this component
-  pattern: /<derp>(\S+)<\/derp>/,
-  // Function to extract data elements from the regexp match
-  fromBlock(match) {
-    return {
-      id: match[1],
-    };
-  },
-  // Function to create a text block from an instance of this component
-  toBlock(obj) {
-    // return 'youtube ' + obj.id;
-    return `<derp>${obj.id}</derp>`;
-  },
-  // Preview output for this component. Can either be a string or a React component
-  // (component gives better render performance)
-  toPreview(obj) {
-    return (
-      <StaticCSSInjector>
-        <Derp>{obj.id} it's a preview</Derp>
-      </StaticCSSInjector>
-    );
-  },
-});
 
 // const Inner = props
 
