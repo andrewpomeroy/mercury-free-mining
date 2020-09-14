@@ -85,7 +85,7 @@ module.exports = {
                 // { tagName: `post-video`, attributes: [`image`] },
                 {
                   tagName: 'float-image',
-                  attributes: [`image`],
+                  attributes: [{ source: `image`, target: 'fluidimage' }],
                 },
                 // object representation can be used to apply/override options or define the target attribute
                 // object and string representation can be mixed to suit requirement

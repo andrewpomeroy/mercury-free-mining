@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 
 import styled from '@emotion/styled';
-import css from '@emotion/css';
 
 const StyledImageWrap = styled.div`
   width: 100%;
@@ -12,20 +11,38 @@ const StyledImageWrap = styled.div`
 `;
 
 const FloatImage = ({ image, alt, title, align, fluidimage }) => {
-  console.log(JSON.parse(fluidimage));
-  const fluid = JSON.parse(fluidimage);
-  return (
-    <StyledImageWrap align={align}>
-      <Img
-        src={image || ''}
-        alt={alt || ''}
-        title={title || ''}
-        align={align}
-        fluid={fluid}
-      />
-    </StyledImageWrap>
-    // <Img fluid={fluid} />
-  );
+  const fluid = fluidimage ? JSON.parse(fluidimage) : null;
+  if (fluid) {
+    return (
+      <StyledImageWrap align={align}>
+        <Img src={image} alt={alt} title={title} align={align} fluid={fluid} />
+      </StyledImageWrap>
+    );
+  }
+  if (image) {
+    return (
+      <StyledImageWrap align={align}>
+        <img src={image} alt={alt} title={title} />
+      </StyledImageWrap>
+    );
+  }
+  return null;
+};
+FloatImage.displayName = 'FloatImage';
+
+FloatImage.propTypes = {
+  image: PropTypes.string.isRequired,
+  fluidimage: PropTypes.string,
+  alt: PropTypes.string,
+  title: PropTypes.string,
+  align: PropTypes.string,
+};
+
+FloatImage.defaultProps = {
+  alt: '',
+  fluidimage: null,
+  title: '',
+  align: '',
 };
 
 export default FloatImage;

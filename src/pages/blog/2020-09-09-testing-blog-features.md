@@ -27,8 +27,6 @@ Donec ullamcorper nulla non metus auctor fringilla. Sed posuere consectetur est 
 
 Here's an image below:
 
-![](/img/©_hb_girl_miner_africa_0029.jpg)
-
 Some text after the image. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum id ligula porta felis euismod semper. Nulla vitae elit libero, a pharetra augue. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
 
 # Heading 1
