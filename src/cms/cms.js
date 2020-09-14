@@ -11,7 +11,6 @@ import TestPagePreview from './preview-templates/TestPagePreview';
 import IndexPagePreview from './preview-templates/IndexPagePreview';
 import ThemeProvider from '../components/ThemeProvider';
 import GlobalStyleWrapper from '../components/GlobalStyleWrapper';
-import { TestWidgetControl, TestWidgetPreview } from '../widgets/testWidget';
 import withEmotion from './withEmotion';
 import floatImageEditorComponent from './floatImageEditorComponent';
 
@@ -19,8 +18,6 @@ CMS.registerMediaLibrary(uploadcare);
 CMS.registerMediaLibrary(cloudinary);
 
 CMS.registerEditorComponent(floatImageEditorComponent);
-
-CMS.registerWidget('testWidget', TestWidgetControl, TestWidgetPreview);
 
 const PreviewShim = element =>
   withEmotion(props => (

@@ -4,16 +4,14 @@ import FloatImage from '../components/FloatImage';
 
 export const FloatImagePreview = (obj, getAsset, fields) => {
   return (
-    <div>
-      <StaticCSSInjector>
-        <FloatImage
-          image={obj.image || ''}
-          alt={obj.alt || ''}
-          title={obj.title || ''}
-          align={obj.align || null}
-        />
-      </StaticCSSInjector>
-    </div>
+    <StaticCSSInjector>
+      <FloatImage
+        image={obj.image || ''}
+        alt={obj.alt || ''}
+        title={obj.title || ''}
+        align={obj.align || null}
+      />
+    </StaticCSSInjector>
   );
 };
 

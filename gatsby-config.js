@@ -22,13 +22,6 @@ module.exports = {
         name: 'pages',
       },
     },
-    // {
-    //   resolve: 'gatsby-source-filesystem',
-    //   options: {
-    //     path: `${__dirname}/src/img`,
-    //     name: 'images',
-    //   },
-    // },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -95,7 +88,7 @@ module.exports = {
               // fluid's arguments
               quality: 50,
               maxWidth: 1200,
-              // withWebp: true
+              withWebp: true,
             },
           },
           {
