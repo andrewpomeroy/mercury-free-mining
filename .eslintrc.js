@@ -6,6 +6,11 @@ module.exports = {
   },
   extends: [
     'airbnb',
+    "plugin:import/errors",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
+    "prettier",
+    "prettier/react"
   ],
   globals: {
     Atomics: 'readonly',
@@ -22,10 +27,11 @@ module.exports = {
     'react',
     'prettier'
   ],
+  parser: "babel-eslint",
   rules: {
     // "quotes": "double",
-    "react/jsx-props-no-spreading": false,
-    "react/prop-types": "warning",
+    "react/jsx-props-no-spreading": 0,
+    "react/prop-types": 1,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "prettier/prettier": [
       "error",

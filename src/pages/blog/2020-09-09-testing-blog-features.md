@@ -5,23 +5,27 @@ date: 2020-09-09T22:37:41.869Z
 description: This is a description. Nulla vitae elit libero, a pharetra augue.
   Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at
   eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia
-  bibendum nulla sed consectetur.
+  bibenasdgasgdum nulla sed consectetur.
 featuredpost: true
-featuredimage: /img/chemex.jpg
+featuredimage: /img/blog-index.jpg
 tags:
   - test tag
   - another test tag
 testWidget:
   - zgdsg
   - tjklasjg
+  - sf
 ---
+
+<!-- ![](/img/eq6mo8rueaagzp1.jpeg) -->
+
+<float-image image="/img/chemex.jpg" alt="alt" title="title" align="left" ></float-image>
+
 Something of an intro. Maecenas sed diam eget risus varius blandit sit amet non magna. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
 
 Donec ullamcorper nulla non metus auctor fringilla. Sed posuere consectetur est at lobortis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
 
 Here's an image below:
-
-![](/img/©_hb_girl_miner_africa_0029.jpg)
 
 Some text after the image. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum id ligula porta felis euismod semper. Nulla vitae elit libero, a pharetra augue. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
 
