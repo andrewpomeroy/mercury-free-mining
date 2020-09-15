@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby + Netlify CMS Starter',
+    title: 'Mercury Free Mining',
     description:
-      'This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.',
+      'Nearly 40% of global mercury pollution comes from artisanal gold mining. Together, we can bring it down to zero.',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
