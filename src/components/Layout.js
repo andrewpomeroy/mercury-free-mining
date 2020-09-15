@@ -11,6 +11,7 @@ const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
   return (
     <GlobalStyleWrapper>
+      {/* Not sure why, but this has to be a div, otherwise styling breaks in SSR — Emotion classes get applied to the wrong elements */}
       <div>
         <Helmet>
           <html lang="en" />
