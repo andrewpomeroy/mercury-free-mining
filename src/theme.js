@@ -3,6 +3,8 @@ const theme = {
     headerBG: 'white',
     gold: '#ba9b60',
     text: '#444',
+    lightText: 'white',
+    white: 'white',
   },
   layout: {
     centerColumn: {
@@ -44,6 +46,7 @@ const theme = {
   },
 };
 
+theme.colors.primary = theme.colors.gold;
 theme.colors.link = theme.colors.gold;
 theme.colors.heading = theme.colors.text;
 

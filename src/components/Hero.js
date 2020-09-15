@@ -2,11 +2,8 @@ import React from 'react';
 import styled from '@emotion/styled';
 import CenterColumnWrap from './CenterColumnWrap';
 import CenterColumn from './CenterColumn';
-import { layout } from "styled-system";
-import { flexbox } from "../styleFunctions";
 import Button from './Button';
 import LinkButton from './LinkButton';
-
 
 const HERO_HEIGHT = 500;
 // const HERO_LINE_GUTTER_V = 500;
@@ -19,13 +16,13 @@ const HeroContainer = styled.div`
   background-image: url(${props => props.imageSrc});
   background-position: left top;
   background-size: cover;
-`
+`;
 const HeroColumns = styled.div`
   height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-`
+`;
 const HeroColumn = styled.div`
   display: flex;
   flex-direction: column;
@@ -35,13 +32,13 @@ const HeroColumn = styled.div`
     max-width: 40%;
   }
   color: white;
-`
+`;
 
 const HeroLine = styled.div`
   &:not(:last-child) {
     margin-bottom: ${props => props.theme.spacing.xxlarge}px;
   }
-  `
+`;
 
 const Heading = styled.div`
   font-family: ${props => props.theme.fontFamilies.heading};
@@ -50,7 +47,7 @@ const Heading = styled.div`
 `;
 const HeroHeading = styled(Heading)`
   font-size: ${props => props.theme.fontSizes[6]}px;
-`
+`;
 
 const Hero = props => {
   return (
@@ -60,20 +57,27 @@ const Hero = props => {
           <HeroColumns>
             <HeroColumn>
               <HeroLine>
-                <HeroHeading as="h2">Nearly 40% of global mercury pollution comes from artisanal gold mining.</HeroHeading>
+                <HeroHeading as="h2">
+                  Nearly 40% of global mercury pollution comes from artisanal
+                  gold mining.
+                </HeroHeading>
               </HeroLine>
               <HeroLine>
-                <HeroHeading as="h2">Together, we can bring it down to zero.</HeroHeading>
+                <HeroHeading as="h2">
+                  Together, we can bring it down to zero.
+                </HeroHeading>
               </HeroLine>
               <HeroLine>
-                <LinkButton size="large" to="/contact">About</LinkButton>
+                <LinkButton shadow="right" size="large" to="/contact">
+                  About
+                </LinkButton>
               </HeroLine>
             </HeroColumn>
           </HeroColumns>
         </CenterColumn>
       </CenterColumnWrap>
     </HeroContainer>
-  )
-}
+  );
+};
 
 export default Hero;
