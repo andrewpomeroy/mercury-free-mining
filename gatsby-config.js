@@ -38,6 +38,22 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://www.mercuryfreemining.org',
+        // sitemap: 'https://www.example.com/sitemap.xml',
+        env: {
+          development: {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+          },
+          production: {
+            // policy: [{ userAgent: '*', allow: '/' }]
+            policy: [{ userAgent: '*', disallow: '/' }],
+          },
+        },
+      },
+    },
     'gatsby-plugin-emotion',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
