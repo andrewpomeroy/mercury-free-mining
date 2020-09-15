@@ -7,6 +7,7 @@
     "@babel/plugin-proposal-optional-chaining": "^7.11.0",
     "@emotion/cache": "^10.0.29",
     "@emotion/core": "^10.0.35",
+    "@emotion/css": "^10.0.27",
     "@emotion/styled": "^10.0.27",
     "@styled-system/theme-get": "^5.1.2",
     "bulma": "^0.8.0",
